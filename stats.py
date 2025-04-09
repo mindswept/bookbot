@@ -16,3 +16,16 @@ def get_chars_appear(book_text):
             num_chars[char] = 1
 
     return num_chars
+
+
+def sort_on(dictionary):
+    return dictionary["count"]
+
+
+def sort_chars(num_chars):
+    sorted_list = []
+
+    for char in num_chars:
+        sorted_list.append({"char": char, "count": num_chars[char]})
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
